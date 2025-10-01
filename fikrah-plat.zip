@@ -1,1 +1,1 @@
-<?php echo "plot.php"; ?>
+<?php include "plot.php"; ?>
