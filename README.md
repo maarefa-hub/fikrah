@@ -1,12 +1,12 @@
-# منصة Fikrah
+# منصة فكرة (Fikrah Platform)
 
-منصة عربية متكاملة تجمع بين الواجهة التفاعلية والخادم الذكي، مصممة لتكون قابلة للنشر مباشرة من الجوال أو الحاسوب.
+منصة عربية متكاملة، قابلة للتشغيل من الجوال مباشرة عبر Termux، وتحتوي على واجهة تفاعلية وخادم ذكي، مصممة لتكون نقطة انطلاق لأي مشروع معرفي أو تقني.
 
 ---
 
-## 🚀 تشغيل المنصة من الجوال (Termux)
+## 🚀 تشغيل المنصة من الجوال
 
 ```bash
 pkg update && pkg upgrade
-pkg install git nodejs bash zip
-curl -O https://raw.githubusercontent.com/maaref-fuh/fikrah/main/setup-lite.sh && bash setup-lite.sh
+pkg install git curl bash zip
+curl -O https://raw.githubusercontent.com/maar/fshrah/main/setup-lite.sh && bash setup-lite.sh
