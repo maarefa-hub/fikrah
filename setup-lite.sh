@@ -2,7 +2,7 @@
 
 echo "🚀 بدء إنشاء منصة Fikrah المتكاملة..."
 
-# بيانات المستخدم
+# بيانات الهوية
 GITHUB_USER="maarefa-hub"
 GITHUB_EMAIL="k774468815k@gmail.com"
 
@@ -15,14 +15,14 @@ git config user.name "$GITHUB_USER"
 git config user.email "$GITHUB_EMAIL"
 
 # إنشاء مجلدات المنصة
-mkdir -p client/public client/src/{components,pages,services}
-mkdir -p server/{routes,controllers,ai}
+mkdir -p client/public client/src/{pages,components}
+mkdir -p server/{routes,ai}
 mkdir shared scripts
 
 # ملفات أساسية
 touch README.md .env .gitignore
 
-# واجهة React
+# واجهة React أولية
 echo 'import React from "react"; import ReactDOM from "react-dom/client"; import App from "./App"; const root = ReactDOM.createRoot(document.getElementById("root")); root.render(<App />);' > client/src/index.js
 
 echo 'export default function App() { return <h1>منصة Fikrah جاهزة</h1>; }' > client/src/App.js
@@ -30,7 +30,7 @@ echo 'export default function App() { return <h1>منصة Fikrah جاهزة</h1>
 # صفحة دردشة بسيطة
 echo 'export default function Chat() { return <div>دردشة Fikrah</div>; }' > client/src/pages/Chat.js
 
-# خادم Express
+# خادم Express أولي
 echo 'import express from "express"; const app = express(); app.use(express.json()); app.post("/ai/chat", (req, res) => { res.send({ reply: "رد من Fikrah AI" }); }); app.listen(3001, () => console.log("✅ Fikrah Server Ready"));' > server/index.js
 
 # أول Commit
