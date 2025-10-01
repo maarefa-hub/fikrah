@@ -1,9 +1,17 @@
 #!/bin/bash
-
 echo "🚀 بدء إنشاء منصة Fikrah المتكاملة..."
+
+# بيانات المستخدم
+GITHUB_USER="maarefa-hub"
+GITHUB_EMAIL="k774468815k@gmail.com"
 
 # إنشاء مجلد المشروع
 mkdir fikrah-plat && cd fikrah-plat
+
+# إعداد Git
+git init
+git config user.name "$GITHUB_USER"
+git config user.email "$GITHUB_EMAIL"
 
 # إنشاء مجلدات رئيسية
 mkdir client server shared scripts docs config
@@ -35,26 +43,12 @@ echo 'import express from "express"; const router = express.Router(); router.pos
 
 echo 'export async function askAI(prompt) { return "Hello from Fikrah AI! You said: " + prompt; }' > server/ai/assistant.js
 
-# إعداد Git
-git init
+# أول Commit
 git add .
-git commit -m "منصة فكرة جاهزة للنشر"
-git branch -M main
-
-# طلب اسم المستخدم من بدر
-read -p "👤 أدخل اسم المستخدم في GitHub: " GITHUB_USER
-REPO_URL="https://github.com/$GITHUB_USER/fikrah-plat.git"
-git remote add origin "$REPO_URL"
-git push -u origin main
+git commit -m "منصة Fikrah جاهزة للنشر"
 
 # ضغط المشروع
 cd ..
-zip -r fikrah-plat.zip fikrah-plat -x "/node_modules/" "/.git/"
-
-# روابط النشر
-echo "🌐 افتح Vercel لنشر الواجهة:"
-echo "https://vercel.com/import/git?s=$REPO_URL"
-echo "🧠 افتح Render لنشر الخادم:"
-echo "https://render.com/dashboard/new/web-service?repo=$REPO_URL"
+zip -r fikrah-plat.zip fikrah-plat -x "**/node_modules/**" "**/.git/**"
 
 echo "✅ تم تجهيز المنصة بالكامل. جاهزة للانطلاق 🎉"
